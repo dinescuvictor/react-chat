@@ -58,5 +58,5 @@ jobs:
           HOST: ${{ secrets.host }}
           DIST: ${{ secrets.dist }}
         run: |
-          rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" -avz /home/runner/work/react-chat/react-chat/builf*  $USER@$HOST:$DIST/
+          rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" -avz /home/runner/work/react-chat/react-chat/build*  $USER@$HOST:$DIST/
           ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no $USER@$HOST "cd $DIST && docker-compose up -d --force-recreate"
